@@ -1,6 +1,6 @@
 = Pipeline Steps
 
-- references preprocessing and indexing
+- preprocessing and indexing of reference [crg]#`genome`# and [crg]#`annotation`#
 - read mapping ([crg]#`BAM`#)
 - inferring experiment strandness
 - producing RNA-seq raw signal ([crg]#`bigWig`#)
