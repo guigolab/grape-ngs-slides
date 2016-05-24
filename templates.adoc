@@ -1,0 +1,44 @@
+== Templates
+
+Command templates are used to support multiple tools and standardize data processing
+
+[source]
+----
+include::https://raw.githubusercontent.com/guigolab/grape-nf/master/grape-pipeline.nf[lines=252..267]
+----
+
+
+== Templates Configuration
+
+The command template configuration resides in the main [crg]#`nextflow.config`#
+
+[source]
+----
+include::https://raw.githubusercontent.com/guigolab/grape-nf/master/nextflow.config[lines=10..12;14..15]
+----
+
+
+== Tool configurations
+
+The [crg]#`task`# properties come from the individual tool configurations
+
+[source]
+----
+include::https://raw.githubusercontent.com/guigolab/grape-nf/master/config/mapping/STAR.config[]
+----
+
+
+== Template Scripts
+icon:arrow-circle-o-right[role="crg",float="left"] the script [crg]#`templates/index/STAR`# is used
+
+[source]
+----
+#!/bin/bash -eu
+mkdir genomeDir
+STAR --runThreadN ${cpus} \
+     --runMode genomeGenerate \
+     --genomeDir genomeDir \
+     --genomeFastaFiles ${genome} \
+     --sjdbGTFfile ${annotation} \
+     --sjdbOverhang ${sjOverHang}
+----

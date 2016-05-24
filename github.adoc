@@ -1,0 +1,10 @@
+== GitHub integration
+
+The pipeline codebase is available on {gh-link}
+
+[source]
+----
+include::https://raw.githubusercontent.com/guigolab/grape-nf/master/nextflow.config[lines=1..2]
+----
+
+the [crg]#`manifest`# scope is used to define a custom main script

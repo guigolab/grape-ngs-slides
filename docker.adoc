@@ -1,0 +1,11 @@
+== Docker
+
+Docker is enabled by default in the main configuration file
+
+[source, subs="+replacements"]
+----
+include::https://raw.githubusercontent.com/guigolab/grape-nf/master/nextflow.config[lines=4..7;8..10;23]
+...
+----
+
+Pre-built Grape containers are publicly available at the {grape-docker}[Docker hub^]

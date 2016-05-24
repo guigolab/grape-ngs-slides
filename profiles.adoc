@@ -1,0 +1,19 @@
+== Pipeline Profiles
+
+Preset profiles with different combinations of tools are available
+
+icon:arrow-circle-o-right[role="crg",float="left"] `gemflux` +
+
+icon:arrow-circle-o-right[role="crg",float="left"] `starrsem` +
+
+icon:arrow-circle-o-right[role="crg",float="left"] `starflux` +
+
+
+== Pipeline Profiles example
+
+[source]
+----
+include::https://raw.githubusercontent.com/guigolab/grape-nf/master/nextflow.config[lines=49..58]
+----
+
+mak use of [crg]#`includeConfig`# to include individual tool configurations

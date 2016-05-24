@@ -1,0 +1,9 @@
+= Features
+
+icon:arrow-circle-o-right[role="crg",float="left"] command line tool +
+
+icon:arrow-circle-o-right[role="crg",float="left"] multiple tools +
+
+icon:arrow-circle-o-right[role="crg",float="left"] version controlled +
+
+icon:arrow-circle-o-right[role="crg",float="left"] seamless execution

@@ -1,0 +1,8 @@
+== Pipeline Steps
+
+- references preprocessing and indexing
+- read mapping ([crg]#`BAM`#)
+- inferring experiment strandness
+- producing RNA-seq raw signal ([crg]#`bigWig`#)
+- computing alignments contigs ([crg]#`bed`#)
+- producing gene and transcript quantification

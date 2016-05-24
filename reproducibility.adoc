@@ -1,0 +1,26 @@
+== Reproducibility
+
+Can be achieved by using three components:
+
+icon:arrow-circle-o-right[role="crg",float="left"] `Nextflow` version, [crg]#`NXF_VER`# environment variable +
+
+icon:arrow-circle-o-right[role="crg",float="left"] `Grape` version, [crg]#`-r`# `Nextflow` command line option +
+
+icon:arrow-circle-o-right[role="crg",float="left"] `Docker` containers
+
+
+== Reproducibility example
+
+[source,language="bash", subs="+replacements"]
+----
+export NXF_VER=0.17.3 // Nextflow version
+export GRAPE_VERSION=304edf5 // Grape git commit hash
+nextflow run grape-nf -r $GRAPE_VERSION ...
+----
+
+or
+
+[source,language="bash", subs="+replacements"]
+----
+NXF_VER=0.17.3 nextflow run grape-nf -r 304edf5 ...
+----
