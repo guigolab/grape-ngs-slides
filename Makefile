@@ -5,7 +5,7 @@ DEPLOY_DIR=ant:~/public_html/grape-oslo
 
 html: index.html
 index.html:
-	@asciidoctor -a allow-uri-read -T ~/workspace/asciidoctor-reveal.js/templates/slim ngs.adoc -o index.html
+	@asciidoctor -a allow-uri-read -T ~/workspace/asciidoctor-reveal.js/templates/slim oslo.adoc -o index.html
 
 $(DEPLOY_LIST):
 	@echo assets > $(DEPLOY_LIST)
