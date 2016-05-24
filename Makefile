@@ -4,7 +4,7 @@ DEPLOY_LIST=deploy-list.txt
 DEPLOY_DIR=ant:~/public_html/grape-oslo
 
 html: index.html
-index.html:
+index.html: oslo.adoc
 	@asciidoctor -a allow-uri-read -T ~/workspace/asciidoctor-reveal.js/templates/slim oslo.adoc -o index.html
 
 $(DEPLOY_LIST):
