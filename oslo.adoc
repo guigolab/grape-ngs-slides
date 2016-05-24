@@ -5,6 +5,7 @@ v1.0, Meeting with Oslo University Hospital - May 25, 2016 - Barcelona - Spain
 :revealjs_progress: false
 :revealjs_controls: false
 :revealjs_slideNumber: true
+:revealjs_skipSlideNumber: [0, "last"]
 :revealjs_center: true
 :revealjs_history: false
 :source-highlighter: highlightjs
@@ -18,9 +19,22 @@ v1.0, Meeting with Oslo University Hospital - May 25, 2016 - Barcelona - Spain
 
 A Nextflow pipeline for processing Illumina RNA-seq data
 
-image:crg_blue_logo.png[role="logo",align="center",width=200] image:NGS_logo.png[role="logo",align="center",width=100]
+image:crg_blue_logo.png[role="logo",align="center",width=200]
 
 :leveloffset: +1
+
+include::steps.adoc[]
+
+include::templates.adoc[]
+
+include::profiles.adoc[]
+
+include::github.adoc[]
+
+include::docker.adoc[]
+
+include::thanks.adoc[]
+
 :leveloffset: -1
 
 
