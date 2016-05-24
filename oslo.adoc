@@ -1,0 +1,168 @@
+= GRAPE
+Emilio Palumbo <emilio.palumbo@crg.eu>
+v1.0, NGS'16 Post Conference Workshop - April 6, 2016 - Barcelona - Spain
+:revealjs_theme: crg
+:revealjs_progress: false
+:revealjs_controls: false
+:revealjs_slideNumber: true
+:revealjs_center: true
+:revealjs_history: false
+:source-highlighter: highlightjs
+:highlightjs-theme: css/github.min.css
+:icons: font
+:imagesdir: assets
+
+:grape-github: https://github.com/guigolab/grape-nf
+:hands-on: http://genome.crg.es/~epalumbo/ngs2016/#grape
+:grape-docker: https://hub.docker.com/r/grape/
+:gh-link: {grape-github}[icon:github[role="black"] GitHub^]
+
+A Nextflow pipeline for processing Illumina RNA-seq data
+
+image:crg_blue_logo.png[role="logo",align="center",width=200] image:NGS_logo.png[role="logo",align="center",width=100]
+
+
+== Features
+
+icon:arrow-circle-o-right[role="crg",float="left"] command line tool +
+
+icon:arrow-circle-o-right[role="crg",float="left"] multiple tools +
+
+icon:arrow-circle-o-right[role="crg",float="left"] version controlled +
+
+icon:arrow-circle-o-right[role="crg",float="left"] seamless execution
+
+
+== Pipeline Steps
+
+- references preprocessing and indexing
+- read mapping ([crg]#`BAM`#)
+- inferring experiment strandness
+- producing RNA-seq raw signal ([crg]#`bigWig`#)
+- computing alignments contigs ([crg]#`bed`#)
+- producing gene and transcript quantification
+
+
+== Templates
+
+Command templates are used to support multiple tools and standardize data processing
+
+[source]
+----
+include::https://raw.githubusercontent.com/guigolab/grape-nf/master/grape-pipeline.nf[lines=252..267]
+----
+
+
+== Templates Configuration
+
+The command template configuration resides in the main [crg]#`nextflow.config`#
+
+[source]
+----
+include::https://raw.githubusercontent.com/guigolab/grape-nf/master/nextflow.config[lines=10..12;14..15]
+----
+
+
+== Tool configurations
+
+The [crg]#`task`# properties come from the individual tool configurations
+
+[source]
+----
+include::https://raw.githubusercontent.com/guigolab/grape-nf/master/config/mapping/STAR.config[]
+----
+
+
+== Template Scripts
+icon:arrow-circle-o-right[role="crg",float="left"] the script [crg]#`templates/index/STAR`# is used
+
+[source]
+----
+#!/bin/bash -eu
+mkdir genomeDir
+STAR --runThreadN ${cpus} \
+     --runMode genomeGenerate \
+     --genomeDir genomeDir \
+     --genomeFastaFiles ${genome} \
+     --sjdbGTFfile ${annotation} \
+     --sjdbOverhang ${sjOverHang}
+----
+
+
+== Pipeline Profiles
+
+Preset profiles with different combinations of tools are available
+
+icon:arrow-circle-o-right[role="crg",float="left"] `gemflux` +
+
+icon:arrow-circle-o-right[role="crg",float="left"] `starrsem` +
+
+icon:arrow-circle-o-right[role="crg",float="left"] `starflux` +
+
+
+== Pipeline Profiles example
+
+[source]
+----
+include::https://raw.githubusercontent.com/guigolab/grape-nf/master/nextflow.config[lines=49..58]
+----
+
+mak use of [crg]#`includeConfig`# to include individual tool configurations
+
+
+== GitHub integration
+
+The pipeline codebase is available on {gh-link}
+
+[source]
+----
+include::https://raw.githubusercontent.com/guigolab/grape-nf/master/nextflow.config[lines=1..2]
+----
+
+the [crg]#`manifest`# scope is used to define a custom main script
+
+
+== Docker
+
+Docker is enabled by default in the main configuration file
+
+[source, subs="+replacements"]
+----
+include::https://raw.githubusercontent.com/guigolab/grape-nf/master/nextflow.config[lines=4..7;8..10;23]
+...
+----
+
+Pre-built Grape containers are publicly available at the {grape-docker}[Docker hub^]
+
+
+== Reproducibility
+
+Can be achieved by using three components:
+
+icon:arrow-circle-o-right[role="crg",float="left"] `Nextflow` version, [crg]#`NXF_VER`# environment variable +
+
+icon:arrow-circle-o-right[role="crg",float="left"] `Grape` version, [crg]#`-r`# `Nextflow` command line option +
+
+icon:arrow-circle-o-right[role="crg",float="left"] `Docker` containers
+
+
+== Reproducibility example
+
+[source,language="bash", subs="+replacements"]
+----
+export NXF_VER=0.17.3 // Nextflow version
+export GRAPE_VERSION=304edf5 // Grape git commit hash
+nextflow run grape-nf -r $GRAPE_VERSION ...
+----
+
+or
+
+[source,language="bash", subs="+replacements"]
+----
+NXF_VER=0.17.3 nextflow run grape-nf -r 304edf5 ...
+----
+
+
+== Hands-on
+
+{hands-on}[icon:link[]^]
