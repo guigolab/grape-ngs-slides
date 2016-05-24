@@ -1,4 +1,4 @@
-== Pipeline Profiles
+= Pipeline Profiles
 
 Preset profiles with different combinations of tools are available
 
@@ -9,7 +9,7 @@ icon:arrow-circle-o-right[role="crg",float="left"] `starrsem` +
 icon:arrow-circle-o-right[role="crg",float="left"] `starflux` +
 
 
-== Pipeline Profiles example
+= Pipeline Profiles example
 
 [source]
 ----

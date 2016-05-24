@@ -1,4 +1,4 @@
-== Templates
+= Templates
 
 Command templates are used to support multiple tools and standardize data processing
 
@@ -8,7 +8,7 @@ include::https://raw.githubusercontent.com/guigolab/grape-nf/master/grape-pipeli
 ----
 
 
-== Templates Configuration
+= Templates Configuration
 
 The command template configuration resides in the main [crg]#`nextflow.config`#
 
@@ -18,7 +18,7 @@ include::https://raw.githubusercontent.com/guigolab/grape-nf/master/nextflow.con
 ----
 
 
-== Tool configurations
+= Tool configurations
 
 The [crg]#`task`# properties come from the individual tool configurations
 
@@ -28,7 +28,7 @@ include::https://raw.githubusercontent.com/guigolab/grape-nf/master/config/mappi
 ----
 
 
-== Template Scripts
+= Template Scripts
 icon:arrow-circle-o-right[role="crg",float="left"] the script [crg]#`templates/index/STAR`# is used
 
 [source]

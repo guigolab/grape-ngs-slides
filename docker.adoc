@@ -1,4 +1,4 @@
-== Docker
+= Docker
 
 Docker is enabled by default in the main configuration file
 

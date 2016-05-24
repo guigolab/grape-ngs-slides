@@ -1,4 +1,4 @@
-== Reproducibility
+= Reproducibility
 
 Can be achieved by using three components:
 
@@ -9,7 +9,7 @@ icon:arrow-circle-o-right[role="crg",float="left"] `Grape` version, [crg]#`-r`# 
 icon:arrow-circle-o-right[role="crg",float="left"] `Docker` containers
 
 
-== Reproducibility example
+= Reproducibility example
 
 [source,language="bash", subs="+replacements"]
 ----

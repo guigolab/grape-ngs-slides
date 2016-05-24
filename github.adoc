@@ -1,4 +1,4 @@
-== GitHub integration
+= GitHub integration
 
 The pipeline codebase is available on {gh-link}
 
