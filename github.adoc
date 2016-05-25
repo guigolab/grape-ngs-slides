@@ -1,4 +1,6 @@
 = GitHub integration
+:grape-github: https://github.com/guigolab/grape-nf
+:gh-link: {grape-github}[^]
 
 The pipeline codebase is available on {gh-link}
 

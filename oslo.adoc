@@ -13,10 +13,6 @@ v1.0, Meeting with Oslo University Hospital - May 25, 2016 - Barcelona - Spain
 :icons: font
 :imagesdir: assets
 
-:grape-github: https://github.com/guigolab/grape-nf
-:grape-docker: https://hub.docker.com/r/grape/
-:gh-link: {grape-github}[icon:github[role="black"] GitHub^]
-
 A Nextflow pipeline for processing Illumina RNA-seq data
 
 image:crg_blue_logo.png[role="logo",align="center",width=200]
@@ -29,9 +25,9 @@ include::templates.adoc[]
 
 include::profiles.adoc[]
 
-include::github.adoc[]
-
 include::docker.adoc[]
+
+include::github.adoc[]
 
 include::thanks.adoc[]
 
