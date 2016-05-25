@@ -5,4 +5,4 @@
 - inferring experiment strandness
 - producing RNA-seq raw signal ([crg]#`bigWig`#)
 - computing alignments contigs ([crg]#`bed`#)
-- producing gene and transcript quantification
+- producing gene and transcript quantification ([crg]#`gff`# or [crg]#`tsv`#)
