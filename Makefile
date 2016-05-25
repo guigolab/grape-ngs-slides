@@ -16,8 +16,8 @@ $(DEPLOY_LIST):
 deploy: html $(DEPLOY_LIST)
 	rsync -arL --files-from=$(DEPLOY_LIST) --exclude=node_modules . $(DEPLOY_DIR)
 
-serve: 
-	@python -m SimpleHTTPServer &> .http.log & echo $$! > .http.pid
+serve: html
+	@ps | grep SimpleHTTPServer | grep -v grep >/dev/null || (python -m SimpleHTTPServer &> .http.log & echo $$! > .http.pid)
 
 unserve: .http.pid
 	@kill $$(cat .http.pid)
