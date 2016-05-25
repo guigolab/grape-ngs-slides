@@ -16,5 +16,14 @@ $(DEPLOY_LIST):
 deploy: html $(DEPLOY_LIST)
 	rsync -arL --files-from=$(DEPLOY_LIST) --exclude=node_modules . $(DEPLOY_DIR)
 
+serve: 
+	@python -m SimpleHTTPServer &> .http.log & echo $$! > .http.pid
+
+unserve: .http.pid
+	@kill $$(cat .http.pid)
+
+presentation: serve
+	@open http://localhost:8000
+
 clean:
 	rm -rf $(DEPLOY_LIST) index.html
