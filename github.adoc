@@ -2,11 +2,13 @@
 :grape-github: https://github.com/guigolab/grape-nf
 :gh-link: {grape-github}[^]
 
-The pipeline codebase is available on {gh-link}
+icon:github[role="black"] {gh-link}
+
+icon:arrow-circle-o-right[role="crg",float="left"] Using Nextflow scm intergration the pipeline can be easily deployed and run
 
 [source]
 ----
-include::https://raw.githubusercontent.com/guigolab/grape-nf/master/nextflow.config[lines=1..2]
+$ nextflow pull guigolab/grape-nf
+...
+$ nextflow run grape-nf ...
 ----
-
-the [crg]#`manifest`# scope is used to define a custom main script
