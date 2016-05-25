@@ -21,6 +21,7 @@ serve:
 
 unserve: .http.pid
 	@kill $$(cat .http.pid)
+	@rm -rf .http.{log,pid}
 
 presentation: serve
 	@open http://localhost:8000
